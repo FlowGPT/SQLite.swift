@@ -4,7 +4,7 @@ import Dispatch
 @testable import SQLite
 
 #if SQLITE_SWIFT_STANDALONE
-import sqlite3
+import SQLiteC
 #elseif SQLITE_SWIFT_SQLCIPHER
 import SQLCipher
 #elseif os(Linux)

@@ -13,18 +13,24 @@ let package = Package(
     products: [
         .library(
             name: "SQLite",
+            type: .`dynamic`, 
             targets: ["SQLite"]
         )
     ],
     targets: [
         .target(
             name: "SQLite",
+            dependencies: ["SQLiteC"],            
             exclude: [
                 "Info.plist"
-            ],
+            ],                              
             swiftSettings: [
                 .define("SQLITE_SWIFT_STANDALONE")
             ]
+        ),
+        .target(
+            name: "SQLiteC",
+            dependencies: []
         ),
         .testTarget(
             name: "SQLiteTests",
